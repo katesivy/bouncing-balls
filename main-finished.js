@@ -32,7 +32,7 @@ function Ball(x, y, velX, velY, exists, color, size) {
 // evil circle constructor
 function EvilCircle(x, y, exists) {
   Shape.call(this, x, y, 20, 20, exists);
-  this.color = "yellow";
+  this.color = "red";
   this.size = 30;
   // para.innerHTML("far fa-angry");
 }
@@ -145,7 +145,7 @@ function EvilCircle2(x, y, exists) {
     }
 
     if ((this.x - this.size) <= 0) {
-      this.x = 10;
+      this.x = 20;
     }
 
     if ((this.y + this.size) >= height) {
@@ -153,7 +153,7 @@ function EvilCircle2(x, y, exists) {
     }
 
     if ((this.y - this.size) <= 0) {
-      this.y = 10;
+      this.y = 20;
     }
   };
   EvilCircle2.prototype.update = function () {
@@ -162,7 +162,7 @@ function EvilCircle2(x, y, exists) {
     }
 
     if ((this.x - this.size) <= 0) {
-      this.x = 10;
+      this.x = 20;
     }
 
     if ((this.y + this.size) >= height) {
@@ -170,7 +170,7 @@ function EvilCircle2(x, y, exists) {
     }
 
     if ((this.y - this.size) <= 0) {
-      this.y = 10;
+      this.y = 20;
     }
   };
   let balls = [];
@@ -245,7 +245,7 @@ function EvilCircle2(x, y, exists) {
   };
 
   let evil = new EvilCircle(35, 35, true);
-  let evil2 = new EvilCircle2(45, 45, true);
+  let evil2 = new EvilCircle2(75, 75, true);
   // define loop that keeps drawing the scene constantly
 
   let ballCount = balls.length;
@@ -268,10 +268,10 @@ function EvilCircle2(x, y, exists) {
     evil.draw();
     evil.update();
     evil.collisionDetect();
-    evil2.setControls();
-    evil2.draw();
-    evil2.update();
-    evil2.collisionDetect();
+    // evil2.setControls();
+    // evil2.draw();
+    // evil2.update();
+    // evil2.collisionDetect();
     document.getElementById("counter").textContent = 'Ball count: ' + ballCount;
   }
   loop();
